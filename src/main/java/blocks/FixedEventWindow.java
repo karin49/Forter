@@ -27,10 +27,8 @@ public class FixedEventWindow <T>
 
     @Override
     public void onNext(T item) {
-      //  System.out.println("w "+ item);
         consumedElements.add(item);
         if (isFull()) {
-         //   System.out.println("submit");
             submit(consumedElements);
             consumedElements = new LinkedList<>();
         }
