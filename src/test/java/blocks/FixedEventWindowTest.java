@@ -13,7 +13,12 @@ public class FixedEventWindowTest {
     public void onSubscribeTest() throws InterruptedException {
         SubmissionPublisher<Integer> publisher = new SubmissionPublisher<>();
         FixedEventWindow<Integer> fixedEventWindow
-                = new FixedEventWindow<>(3);
+                = null;
+        try {
+            fixedEventWindow = new FixedEventWindow<>(3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         PrinterSubscriber<List<Integer>> printerSubscriber = new PrinterSubscriber<>();
         List<Integer> items = List.of(1, 2, -5, 3, 4, 5, 6);
 

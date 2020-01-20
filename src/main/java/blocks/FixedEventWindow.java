@@ -13,8 +13,10 @@ public class FixedEventWindow <T>
     private Flow.Subscription subscription;
     private List<T> consumedElements;
 
-    public FixedEventWindow(int aggregateNumber) {
+    public FixedEventWindow(int aggregateNumber) throws Exception {
         super();
+        if (aggregateNumber == 0)
+            throw new Exception("Window size cannot be 0");
         this.aggregateNumber = aggregateNumber;
     }
 

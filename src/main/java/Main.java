@@ -8,7 +8,7 @@ import source.StdinSource;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         FilterBlock<Integer> filterBlock = new FilterBlock<>(i -> i> 0);
         FixedEventWindow<Integer> window2 = new FixedEventWindow<>(2);
         FoldSumIntegers foldSum = new FoldSumIntegers();
